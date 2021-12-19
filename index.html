@@ -1,24 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Form</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
-<form action="https://google.com.vn" method="post" enctype="multipart/form-data">
-    <div>Username</div>
-    <input type="text" name="user_name" placeholder="Username">
+<div>A</div>
+<div>B</div>
+<div>C</div>
+<div>D</div>
+<div>E</div>
+<div>F</div>
 
-    <div>Password</div>
-    <input type="password" name="password" placeholder="Password">
+<span>
 
-    <select name="province">
-        <option value="0">Hà Nội</option>
-        <option value="1">Quảng Ninh</option>
-        <option value="2">Hải Phòng</option>
-    </select>
+</span>
 
-    <button>Submit Form</button>
-</form>
+<button onclick="changeTextInDivNode()">Change Text</button>
+<button class="my-button">Click me</button>
+<style>
+    span {
+        display: block;
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+</style>
+<script>
+    function changeTextInDivNode() {
+        const nodeDiv = document.querySelector('div');
+        const nodeDivs = document.querySelectorAll('div');//mảng các đối tượng dom mà match với selector
+        //nodeDiv.innerText = 'Hello World';
+        console.log(nodeDivs);
+        for (let i = 0; i < nodeDivs.length; i++) {
+            console.log(nodeDivs[i].innerText);
+        }
+    }
+
+    const myButton = document.querySelector('.my-button');
+    myButton.addEventListener('click', function () {
+        const nodeSpan = document.querySelector('span');
+        nodeSpan.style.backgroundColor = 'yellow';
+    });
+</script>
 </body>
 </html>
