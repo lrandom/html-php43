@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="wrapper">
+</div>
+
+<button onclick="convertArrToTag()">Convert Array To Tag</button>
+<script>
+    const arr = [
+        "This is paragraph 1",
+        "This is paragraph 2",
+        "This is paragraph 3",
+        "This is paragraph 4",
+        "This is paragraph 5"
+    ]
+
+    const wrapper = document.querySelector('#wrapper');
+
+    const convertArrToTag = () => {
+        for (let i = 0; i < arr.length; i++) {
+            const pNode = document.createElement("p");
+            pNode.innerText = arr[i];
+            wrapper.appendChild(pNode);
+        }
+    };
+</script>
+</body>
+</html>
