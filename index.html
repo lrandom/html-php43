@@ -1,50 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //code thao tác
+
+            //JS thuần
+          /*  const wrapper = document.querySelector('#wrapper > span');
+            wrapper.innerHTML = "<i>Hello</i>";*/
+
+            //JS jQuery
+            $('#wrapper').after('<span><i>Hello</i></span>');
+
+
+        });
+    </script>
 </head>
 <body>
-<div>A</div>
-<div>B</div>
-<div>C</div>
-<div>D</div>
-<div>E</div>
-<div>F</div>
+  <div id="wrapper">
+      <span>Hi</span>
+  </div>
 
-<span>
+   <input type="text" name="name"/>
+   <button onclick="getValue()">Get</button>
+   <div class="parent">
+       <div>child</div>
+       <div>child</div>
+       <div>child</div>
+       <div>child</div>
+   </div>
 
-</span>
-
-<button onclick="changeTextInDivNode()">Change Text</button>
-<button class="my-button">Click me</button>
-<style>
-    span {
-        display: block;
-        width: 100px;
-        height: 100px;
-        background: red;
-    }
-</style>
-<script>
-    function changeTextInDivNode() {
-        const nodeDiv = document.querySelector('div');
-        const nodeDivs = document.querySelectorAll('div');//mảng các đối tượng dom mà match với selector
-        //nodeDiv.innerText = 'Hello World';
-        console.log(nodeDivs);
-        for (let i = 0; i < nodeDivs.length; i++) {
-            console.log(nodeDivs[i].innerText);
-        }
+   <button onclick="emptyParent()">Empty Parent</button>
+   <img src="https://images.unsplash.com/photo-1471879832106-c7ab9e0cee23?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max">
+  <button onclick="getLinkImage()">Get Link Image</button>
+  <script>
+    function getValue() {
+        //const name = document.querySelector('input[name="name"]').value;
+        const name = $('input[name="name"]').val();//get setter
+        alert(name);
+        $('input[name="name"]').val('Hello, Im Luan');
     }
 
-    const myButton = document.querySelector('.my-button');
-    myButton.addEventListener('click', function () {
-        const nodeSpan = document.querySelector('span');
-        nodeSpan.style.backgroundColor = 'yellow';
-    });
+    function emptyParent() {
+        $('.parent').empty();
+    }
+
+    function getLinkImage() {
+        $('img').attr('src','https://image.shutterstock.com/image-photo/mountains-during-sunset-beautiful-natural-260nw-407021107.jpg');
+    }
 </script>
 </body>
 </html>

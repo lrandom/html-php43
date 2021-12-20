@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<div class="slider">
+    <div class="inner-slider">
+        <img src="imgs/1.jpeg" alt="Ảnh 1">
+        <img src="imgs/2.jpeg" alt="Ảnh 2">
+        <img src="imgs/3.jpg" alt="Ảnh 3">
+    </div>
+    <div>
+        <button onclick="prev()">
+            Prev
+        </button>
+
+        <button onclick="next()">
+            Next
+        </button>
+    </div>
+</div>
+
+<script>
+    function prev() {
+        const node = $('.inner-slider img').eq(0);
+        $('.inner-slider').append(node);
+    };
+
+    function next() {
+        const node = $('.inner-slider img').eq($('.inner-slider img').length - 1);
+        $('.inner-slider').prepend(node);
+    };
+</script>
+
+<style>
+    .slider {
+        position: relative;
+        width: 500px;
+        margin: 0px auto;
+        overflow: hidden;
+    }
+
+    .inner-slider {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        overflow: hidden;
+    }
+
+    .slider img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+</body>
+</html>

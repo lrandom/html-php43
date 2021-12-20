@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<ul>
+    <li>PHP</li>
+    <li>Java</li>
+    <li>C#</li>
+    <li>C++</li>
+</ul>
+
+<button>
+    Add New Language
+</button>
+
+<input type="text" id="new-language">
+
+<script>
+    $('button').click(function (){
+        $('ul').prepend('<li>Python</li>');
+    })
+
+    $('input').focus(function () {
+       // alert("You focus in me");
+    });
+</script>
+</body>
+</html>

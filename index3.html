@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<div class="box">
+
+</div>
+
+<div class="btn-show-box">
+    Show Box
+</div>
+
+<div class="btn-hide-box">
+    Hide Box
+</div>
+
+<div class="btn-toggle">Show/Hide Box</div>
+
+<div class="btn-animate">Animate</div>
+<div class="btn-chain">Chain</div>
+
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+</style>
+<script>
+    $('.btn-show-box').click(function () {
+        // $('.box').show();
+        //document.querySelector('.box').style.display = 'block';
+        /*$('.box').slideDown()*/
+        //$('.box').fadeIn();
+
+    });
+
+    $('.btn-hide-box').click(function () {
+        // $('.box').hide();
+        //document.querySelector('.box').style.display = 'none';
+        /*
+                $('.box').slideUp();
+        */
+
+        //$('.box').fadeOut();
+
+    });
+
+    $('.btn-toggle').click(function () {
+        $('.box').toggle();
+    });
+
+    $('.btn-animate').click(function () {
+        $('.box').animate({
+            width: '300px',
+            height: '300px',
+            background: 'blue'
+        }, 5000);
+    });
+
+    $('.btn-chain').click(function () {
+        $('.box').hide(2000).show(2000);
+    });
+</script>
+</body>
+</html>
